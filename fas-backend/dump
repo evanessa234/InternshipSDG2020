@@ -1,0 +1,291 @@
+mutation {
+  createCourse(
+    data: {
+      from: 2019
+      to: 2020
+    
+      sem: 3
+      subjectCode: "CSC301"
+      name: "dbms"
+      credits: 4
+      lectHours: 40
+      toLectHours: 40
+      practHours: 40
+      toPractHours: 40
+      objectives: [{ number: 1, name: "one" }, { number: 2, name: "two" }]
+      outcomes: [
+        {
+          number: 1
+          name: "one"
+          weightagePercent: 100
+          durationHours: 40
+          numberOfExp: 69
+        }
+        {
+          number: 2
+          name: "two"
+          weightagePercent: 100
+          durationHours: 40
+          numberOfExp: 69
+        }
+      ]
+      topics: [
+        {
+          coMeet:"69"
+          chapterExpTopic: ""
+          chapterExpNumber: 691
+          chapterExpWeightage: 420
+        }
+        {
+          coMeet: "691"
+          chapterExpTopic: "nigga"
+          chapterExpNumber: 69
+          chapterExpWeightage: 420
+        }
+      ]
+      coPoMappings: [
+                { coNumber: "69", poNumber: "420", rating: 69420 }
+        { coNumber: "69420", poNumber: "42069", rating:69420 }
+      ]
+      coPsoMappings: [
+
+        { coNumber: "69", poNumber: "420", rating: 69420 }
+        { coNumber: "69420", poNumber: "42069", rating:69420}
+      ]
+      lessonPlans: [
+        {
+          weekNumber:169
+          lectureNumber: 69
+          subTopics: "nice"
+          coMeet: "69"
+          weightage: 69
+          teachingMethod: "intercourse"
+        }
+        {
+          weekNumber: 69
+          lectureNumber: 69
+          subTopics: "nice"
+          coMeet: "69"
+          weightage: 69
+          teachingMethod: "intercourse"
+        }
+      ]
+      programOutcomes: [
+        { number: "691", title: "tape", description: "nusta  bc" }
+        { number: "69", title: " tape", description: "nusta  bc" }
+      ]
+      programSpecificOutcomes: [
+        { number: "691", description: "nusta  bc" }
+        { number: "69", description: "nusta  bc" }
+      ]
+      assessmentMethods: []
+    }
+  ) {
+    from
+    to
+    sem
+    subjectCode
+    name
+    credits
+    lectHours
+    toLectHours
+    practHours
+    toPractHours
+    submitStatus
+    submitTime
+    dqaApproved
+    hodApproved
+    hodComment
+    hodCommentTime
+    objectives {
+      number
+      name
+    }
+    outcomes {
+      number
+      name
+      weightagePercent
+      durationHours
+      numberOfExp
+    }
+    topics {
+      coMeet
+      chapterExpTopic
+      chapterExpNumber
+      chapterExpWeightage
+    }
+    coPoMappings {
+      coNumber
+      poNumber
+      rating
+    }
+    coPsoMappings {
+      coNumber
+      poNumber
+      rating
+    }
+    lessonPlans {
+      weekNumber
+      lectureNumber
+      subTopics
+      coMeet
+      weightage
+      teachingMethod
+    }
+    programOutcomes {
+      number
+      title
+      description
+    }
+    programSpecificOutcomes {
+      number
+
+      description
+    }
+  }
+}mutation {
+  createCourse(
+    data: {
+      from: 2019
+      to: 2020
+    
+      sem: 3
+      subjectCode: "CSC301"
+      name: "dbms"
+      credits: 4
+      lectHours: 40
+      toLectHours: 40
+      practHours: 40
+      toPractHours: 40
+      objectives: [{ number: 1, name: "one" }, { number: 2, name: "two" }]
+      outcomes: [
+        {
+          number: 1
+          name: "one"
+          weightagePercent: 100
+          durationHours: 40
+          numberOfExp: 69
+        }
+        {
+          number: 2
+          name: "two"
+          weightagePercent: 100
+          durationHours: 40
+          numberOfExp: 69
+        }
+      ]
+      topics: [
+        {
+          coMeet:"69"
+          chapterExpTopic: ""
+          chapterExpNumber: 691
+          chapterExpWeightage: 420
+        }
+        {
+          coMeet: "691"
+          chapterExpTopic: "nigga"
+          chapterExpNumber: 69
+          chapterExpWeightage: 420
+        }
+      ]
+      coPoMappings: [
+                { coNumber: "69", poNumber: "420", rating: 69420 }
+        { coNumber: "69420", poNumber: "42069", rating:69420 }
+      ]
+      coPsoMappings: [
+
+        { coNumber: "69", poNumber: "420", rating: 69420 }
+        { coNumber: "69420", poNumber: "42069", rating:69420}
+      ]
+      lessonPlans: [
+        {
+          weekNumber:169
+          lectureNumber: 69
+          subTopics: "nice"
+          coMeet: "69"
+          weightage: 69
+          teachingMethod: "intercourse"
+        }
+        {
+          weekNumber: 69
+          lectureNumber: 69
+          subTopics: "nice"
+          coMeet: "69"
+          weightage: 69
+          teachingMethod: "intercourse"
+        }
+      ]
+      programOutcomes: [
+        { number: "691", title: "tape", description: "nusta  bc" }
+        { number: "69", title: " tape", description: "nusta  bc" }
+      ]
+      programSpecificOutcomes: [
+        { number: "691", description: "nusta  bc" }
+        { number: "69", description: "nusta  bc" }
+      ]
+      assessmentMethods: []
+    }
+  ) {
+    from
+    to
+    sem
+    subjectCode
+    name
+    credits
+    lectHours
+    toLectHours
+    practHours
+    toPractHours
+    submitStatus
+    submitTime
+    dqaApproved
+    hodApproved
+    hodComment
+    hodCommentTime
+    objectives {
+      number
+      name
+    }
+    outcomes {
+      number
+      name
+      weightagePercent
+      durationHours
+      numberOfExp
+    }
+    topics {
+      coMeet
+      chapterExpTopic
+      chapterExpNumber
+      chapterExpWeightage
+    }
+    coPoMappings {
+      coNumber
+      poNumber
+      rating
+    }
+    coPsoMappings {
+      coNumber
+      poNumber
+      rating
+    }
+    lessonPlans {
+      weekNumber
+      lectureNumber
+      subTopics
+      coMeet
+      weightage
+      teachingMethod
+    }
+    programOutcomes {
+      number
+      title
+      description
+    }
+    programSpecificOutcomes {
+      number
+
+      description
+    }
+  }
+}

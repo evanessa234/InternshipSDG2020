@@ -1,0 +1,244 @@
+
+type Objective {
+    
+    number: String
+    name: String
+}
+
+type Outcome {
+    number: String
+    name: String
+    weightagePercent: Int
+    durationHours: Int
+    numberOfExp: Int
+}
+
+type Topic {
+    chapterExpNumber: Int
+    chapterExpTopic: String
+    coMeet: String
+    chapterExpWeightage: Int
+}
+
+type CoPoMapping {
+    coNumber: String
+    poNumber: String
+    rating: Int
+}
+
+type CoPsoMapping {
+    coNumber: String
+    poNumber: String
+    rating: Int
+}
+
+
+type LessonPlan {
+    weekNumber: Int
+    lectureNumber: Int
+    subTopics: String
+    coMeet: String
+    weightage: Float
+    teachingMethod: String
+}
+
+type ProgramOutcome {
+    number: String
+    title: String
+    description: String
+}
+
+type ProgramSpecificOutcome {
+    number: String
+    description: String
+}
+
+type AssessmentMethod {
+    number: Int
+    method: String
+    coMeet: String
+    marks: Int
+}
+
+
+type Course {
+    id: ID
+    from: Int
+    to: Int
+    sem: Int
+    subjectCode: String
+    name: String
+    credits: Int
+    lectHours: Int
+    toLectHours: Int
+    practHours: Int
+    toPractHours: Int
+    submitBy: Int
+    submitTime: String
+    dqaApproved: Int
+    hodApproved: Int
+    hodComment: String 
+    hodCommentTime: String
+    objectives: [Objective]
+    outcomes: [Outcome]
+    topics: [Topic]
+    coPoMappings: [CoPoMapping]
+    coPsoMappings: [CoPsoMapping]
+    lessonPlans: [LessonPlan]
+    programOutcomes: [ProgramOutcome]
+    programSpecificOutcomes: [ProgramSpecificOutcome]
+    assessmentMethods: [AssessmentMethod] 
+}
+
+type Audit {
+
+    btLevel: Int
+    grammar: Int
+    coComment: String
+    properDistributionMap: Int
+    commentMap: String
+    syllabusCoverage: Int
+    coWeightage: Int
+    chapterExpWeightage: Int
+    commentWeightage: String
+    coCoverageAssMethod: Int
+    marksDistribution: Int
+    questionQuality: String
+    commentAssMethod: String
+    typeOfExp: String
+    timeJustified: Int
+    modernToolsUsed: Int
+    outOfSyllabus: Int
+
+}
+
+
+input ObjectiveInput {
+    number: String
+    name: String
+}
+
+input OutcomeInput {
+    number: String
+    name: String
+    weightagePercent: Int
+    durationHours: Int
+    numberOfExp: Int
+}
+
+input TopicInput {
+    chapterExpNumber: Int
+    chapterExpTopic: String
+    coMeet: String
+    chapterExpWeightage: Int
+}
+input CoPoMappingInput {
+    coNumber: String
+    poNumber: String
+    rating: Int
+}
+
+input CoPsoMappingInput {
+    coNumber: String
+    poNumber: String
+    rating: Int
+}
+input LessonPlanInput {
+    weekNumber: Int
+    lectureNumber: Int
+    subTopics: String
+    coMeet: String
+    weightage: Float
+    teachingMethod: String
+}
+input ProgramOutcomeInput {
+    number: String
+    title: String
+    description: String
+}
+input AssessmentMethodInput {
+    number: Int
+    method: String
+    coMeet: String
+    marks: Int
+}
+
+input AuditInput {
+        btLevel: Int
+    grammar: Int
+    coComment: String
+    properDistributionMap: Int
+    commentMap: String
+    syllabusCoverage: Int
+    coWeightage: Int
+    chapterExpWeightage: Int
+    commentWeightage: String
+    coCoverageAssMethod: Int
+    marksDistribution: Int
+    questionQuality: String
+    commentAssMethod: String
+    typeOfExp: String
+    timeJustified: Int
+    modernToolsUsed: Int
+    outOfSyllabus: Int
+}
+
+input CourseInput {
+    from: Int
+    to: Int
+    sem: Int
+    subjectCode: String
+    name: String
+    credits: Int
+    lectHours: Int
+    toLectHours: Int
+    practHours: Int
+    toPractHours: Int
+    objectives: [ObjectiveInput] 
+    outcomes: [OutcomeInput]
+    topics: [TopicInput]
+    coPoMappings: [CoPoMappingInput]
+    coPsoMappings: [CoPsoMappingInput]
+    lessonPlans: [LessonPlanInput]
+    programOutcomes: [ProgramOutcomeInput]
+    programSpecificOutcomes: [ProgramSpecificOutcomeInput]
+    assessmentMethods: [AssessmentMethodInput]
+}
+
+type Query {
+    courses: [Course] @isAuth
+    course(id: Int): Course @isAuth
+    getAudit(id: Int): Audit @isAuth
+
+}
+
+input ProgramSpecificOutcomeInput {
+    number: String
+    description: String
+}
+
+type Mutation {
+
+    #  COURSE
+
+    createCourse(data: CourseInput): Course @isAuth
+    delete(id: Int): Course @isAuth
+    updateCourse(id: Int, data: CourseInput): Course @isAuth
+
+    # MISC
+
+    dqaApprove(id: Int): Course @isDQA
+    dqaDisApprove(id: Int): Course @isDQA 
+    hodApprove(id: Int): Course @isHOD
+    hodDisApprove(id: Int): Course @isHOD
+    hodComment(id: Int, comment: String): Course @isHOD
+    submit(id: Int, sdrn: Int): Course @isAuth
+
+    # AUDIT
+
+    audit(id: Int, data: AuditInput): Audit @isDQA
+    updateAudit(id: Int, data: AuditInput): Audit @isDQA
+    deleteAudit(id: Int): Audit @isDQA
+}
+
+

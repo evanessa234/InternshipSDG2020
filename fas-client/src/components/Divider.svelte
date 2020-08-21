@@ -1,0 +1,1 @@
+<div class="bg-red-200 h-1 mx-auto container my-2"/>

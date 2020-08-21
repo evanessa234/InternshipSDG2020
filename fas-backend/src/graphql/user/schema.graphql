@@ -1,0 +1,25 @@
+type User {
+  id: ID
+  email: String
+  firstName: String
+  lastName: String
+  jwt: String @isAuthUser
+  role: String
+}
+
+input UserInput {
+    email: String
+    password: String
+    firstName: String
+    lastName: String,
+    role: String
+}
+
+type Query {
+   getUser: User @isAuth
+   loginUser(email: String, password: String): User
+}
+
+type Mutation {
+   createUser(data: UserInput): User
+}
